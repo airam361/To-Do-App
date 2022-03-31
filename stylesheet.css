@@ -1,0 +1,264 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Noto Sans JP", sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 0;
+  padding-top: 3rem;
+  background-color: #45b879;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 3rem;
+  background-color: #fff;
+}
+header span {
+  display: inline-block;
+  margin-left: 1rem;
+  align-self: center;
+}
+header img {
+  width: 40px;
+  height: 40px;
+  margin-left: 1rem;
+}
+
+header > h3 {
+  margin: 0;
+  margin-left: 0.5rem;
+  min-width: 140px;
+}
+
+.container-left {
+  display: inline-block;
+  width: 30%;
+  margin-top: 1rem;
+}
+.container-rigth {
+  display: inline-block;
+  width: 40%;
+  /* margin-top: 1rem; */
+}
+
+.todo-form {
+  position: sticky;
+  top: 64px;
+  padding: 1rem;
+  border-radius: 12px;
+  background-color: white;
+}
+.control {
+  margin-bottom: 1rem;
+}
+.control > label {
+  font-weight: bold;
+  display: inline-block;
+  margin-bottom: 0.5rem;
+}
+.control > textarea {
+  font: inherit;
+  padding: 0.35rem;
+  border-radius: 4px;
+  background-color: #f0f0f0;
+  border: 1px solid #c1d1d1;
+  display: block;
+  width: 100%;
+  resize: vertical;
+  resize: vertical;
+  min-height: 5rem;
+}
+.control input {
+  cursor: pointer;
+}
+.control textarea:focus {
+  background-color: #f2fff8;
+  outline-color: #45b879;
+}
+
+.form-actions {
+  text-align: right;
+}
+.btn-disabled {
+  background-color: #ccc;
+}
+.form-actions button {
+  background-color: #45b879;
+  color: white;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  border: 2px solid #45b879;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+}
+.form-actions button:hover {
+  background-color: #fff;
+  color: #45b879;
+  border: 2px solid #45b879;
+}
+
+.items {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 3rem;
+  min-width: 15rem;
+  border-radius: 12px;
+  background-color: white;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.item__text {
+  word-wrap: break-word;
+  flex-grow: 1;
+  margin-left: 1rem;
+  font-size: 14px;
+}
+.item__actions {
+  display: flex;
+  margin-left: 1rem;
+}
+
+.item button {
+  padding: 0;
+  margin: 3px;
+  cursor: pointer;
+  background-color: transparent;
+  border-radius: 50%;
+  border: none;
+  width: 30px;
+  height: 30px;
+}
+.item button:hover {
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
+}
+
+.item img {
+  width: 100%;
+}
+
+.loading {
+  margin-top: 2rem;
+  text-align: center;
+}
+.lds-dual-ring {
+  display: none;
+  width: 80px;
+  height: 80px;
+}
+.lds-dual-ring:after {
+  content: " ";
+  display: block;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border-radius: 50%;
+  border: 6px solid #fff;
+  border-color: #fff transparent #fff transparent;
+  animation: lds-dual-ring 1.2s linear infinite;
+}
+@keyframes lds-dual-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.options {
+  position: sticky;
+  top: 48px;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 18px;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  border-bottom: 3px solid #fff;
+  background-color: #45b879;
+}
+.options__filter,
+.options__items-per-page {
+  display: inline-block;
+  margin-right: 5px;
+}
+.options__filter label,
+.options__items-per-page label {
+  color: #fff;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+.options__filter select,
+.options__items-per-page select {
+  width: auto;
+  height: 25px;
+  border-radius: 5px;
+  font-family: inherit;
+}
+.options__filter select:focus-visible,
+.options__items-per-page select:focus-visible {
+  outline-offset: -100px;
+}
+
+.options__search-box {
+  display: flex;
+}
+.options__search-box input {
+  width: 100%;
+  border: 3px solid #fff;
+  border-right: none;
+  height: 25px;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  color: #000;
+}
+.options__search-box button {
+  width: 30px;
+  height: 25px;
+  border: 1px solid #fff;
+  background: #fff;
+  text-align: center;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 20px;
+}
+.fa-solid {
+  color: #45b879;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+.pagination a {
+  color: #fff;
+  padding: 8px 16px;
+  text-decoration: none;
+  font-weight: 300;
+  font-size: 18px;
+}
+a.active-page {
+  color: #fff;
+  text-decoration: underline;
+  text-underline-offset: 5px;
+  text-decoration-thickness: 3px;
+}

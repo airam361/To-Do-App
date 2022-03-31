@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons+Round"
+      rel="stylesheet"
+    /> -->
+    <link rel="stylesheet" href="movingCow.css" />
+    <link rel="stylesheet" href="stylesheet.css" />
+    <title>jsonServer moreOptions pagination</title>
+    <script
+      src="https://kit.fontawesome.com/2be0f1576f.js"
+      crossorigin="anonymous"
+    ></script>
+    <script type="module" src="./index.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <img src="./images/checklist_118086.png" />
+      <h3>My To-Do List</h3>
+      <div class="sliding-image-container">
+        <div class="sliding-image"></div>
+      </div>
+      <div class="grass">
+        <div class="blade1"></div>
+        <div class="blade2"></div>
+        <div class="blade3"></div>
+        <div class="blade4"></div>
+        <div class="blade5"></div>
+        <div class="blade6"></div>
+        <div class="blade7"></div>
+        <div class="blade8"></div>
+        <div class="blade9"></div>
+        <div class="blade10"></div>
+      </div>
+      <div class="grass">
+        <div class="blade1"></div>
+        <div class="blade2"></div>
+        <div class="blade3"></div>
+        <div class="blade4"></div>
+        <div class="blade5"></div>
+        <div class="blade6"></div>
+        <div class="blade7"></div>
+        <div class="blade8"></div>
+        <div class="blade9"></div>
+        <div class="blade10"></div>
+      </div>
+      <div class="grass">
+        <div class="blade1"></div>
+        <div class="blade2"></div>
+        <div class="blade3"></div>
+        <div class="blade4"></div>
+        <div class="blade5"></div>
+        <div class="blade6"></div>
+        <div class="blade7"></div>
+        <div class="blade8"></div>
+        <div class="blade9"></div>
+        <div class="blade10"></div>
+      </div>
+      <div class="grass">
+        <div class="blade1"></div>
+        <div class="blade2"></div>
+        <div class="blade3"></div>
+        <div class="blade4"></div>
+        <div class="blade5"></div>
+        <div class="blade6"></div>
+        <div class="blade7"></div>
+        <div class="blade8"></div>
+        <div class="blade9"></div>
+        <div class="blade10"></div>
+      </div>
+      <div class="grass">
+        <div class="blade1"></div>
+        <div class="blade2"></div>
+        <div class="blade3"></div>
+        <div class="blade4"></div>
+        <div class="blade5"></div>
+        <div class="blade6"></div>
+        <div class="blade7"></div>
+        <div class="blade8"></div>
+        <div class="blade9"></div>
+        <div class="blade10"></div>
+      </div>
+      <div class="grass">
+        <div class="blade1"></div>
+        <div class="blade2"></div>
+        <div class="blade3"></div>
+        <div class="blade4"></div>
+        <div class="blade5"></div>
+        <div class="blade6"></div>
+        <div class="blade7"></div>
+        <div class="blade8"></div>
+        <div class="blade9"></div>
+        <div class="blade10"></div>
+      </div>
+      <div class="grass">
+        <div class="blade1"></div>
+        <div class="blade2"></div>
+        <div class="blade3"></div>
+        <div class="blade4"></div>
+        <div class="blade5"></div>
+        <div class="blade6"></div>
+        <div class="blade7"></div>
+        <div class="blade8"></div>
+        <div class="blade9"></div>
+        <div class="blade10"></div>
+      </div>
+      <div class="grass">
+        <div class="blade1"></div>
+        <div class="blade2"></div>
+        <div class="blade3"></div>
+        <div class="blade4"></div>
+        <div class="blade5"></div>
+        <div class="blade6"></div>
+        <div class="blade7"></div>
+        <div class="blade8"></div>
+        <div class="blade9"></div>
+        <div class="blade10"></div>
+      </div>
+      <div class="grass">
+        <div class="blade1"></div>
+        <div class="blade2"></div>
+        <div class="blade3"></div>
+        <div class="blade4"></div>
+        <div class="blade5"></div>
+        <div class="blade6"></div>
+        <div class="blade7"></div>
+        <div class="blade8"></div>
+        <div class="blade9"></div>
+        <div class="blade10"></div>
+      </div>
+      <div class="grass">
+        <div class="blade1"></div>
+        <div class="blade2"></div>
+        <div class="blade3"></div>
+        <div class="blade4"></div>
+        <div class="blade5"></div>
+        <div class="blade6"></div>
+        <div class="blade7"></div>
+        <div class="blade8"></div>
+        <div class="blade9"></div>
+        <div class="blade10"></div>
+      </div>
+      <div class="grass">
+        <div class="blade1"></div>
+        <div class="blade2"></div>
+        <div class="blade3"></div>
+        <div class="blade4"></div>
+        <div class="blade5"></div>
+        <div class="blade6"></div>
+        <div class="blade7"></div>
+        <div class="blade8"></div>
+        <div class="blade9"></div>
+        <div class="blade10"></div>
+      </div>
+      <div class="grass last">
+        <div class="blade1"></div>
+        <div class="blade2"></div>
+        <div class="blade3"></div>
+        <div class="blade4"></div>
+        <div class="blade5"></div>
+        <div class="blade6"></div>
+        <div class="blade7"></div>
+        <div class="blade8"></div>
+        <div class="blade9"></div>
+        <div class="blade10"></div>
+      </div>
+    </header>
+    <div class="container-left">
+      <form class="todo-form">
+        <div class="control">
+          <label for="todo">Your TO DO</label>
+          <textarea name="todo"></textarea>
+        </div>
+        <div class="form-actions">
+          <button dataid="">Add TO DO</button>
+        </div>
+      </form>
+    </div>
+    <div class="container-rigth">
+      <div class="options">
+        <div>
+          <div class="options__filter">
+            <label for="filter">Filter by:</label>
+            <select name="filter">
+              <option value="" disabled selected hidden>Select</option>
+              <option value="">All</option>
+              <option value="true">Completed</option>
+              <option value="false">Pending</option>
+            </select>
+          </div>
+          <div class="options__items-per-page">
+            <label for="page">Items per page:</label>
+            <select name="page">
+              <option value="10">10</option>
+              <option value="20">20</option>
+              <option value="50">50</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="options__search-box">
+          <input type="text" placeholder="Search TO DO" />
+          <button type="submit">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </div>
+      </div>
+
+      <ul class="items">
+        <div class="loading">
+          <div class="lds-dual-ring"></div>
+        </div>
+      </ul>
+
+      <div class="pagination"></div>
+    </div>
+  </body>
+</html>
