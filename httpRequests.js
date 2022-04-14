@@ -1,4 +1,5 @@
-const link = "http://localhost:5500/todos";
+// const link = "http://localhost:5500/todos";
+const link = "https://to-do-app-bk.herokuapp.com/todos";
 
 export const getToDos = (specialLink, noPage = 1, limit = 10) => {
   let totalItems = 0;
