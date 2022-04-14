@@ -15,14 +15,14 @@
     {
       "userId": 1,
       "id": 4,
-      "title": "et porro tempora",
-      "completed": false
+      "title": "et porro tempora ceva",
+      "completed": true
     },
     {
       "userId": 1,
       "id": 5,
       "title": "laboriosam mollitia et enim quasi adipisci quia provident illum",
-      "completed": false
+      "completed": true
     },
     {
       "userId": 1,
@@ -34,7 +34,7 @@
       "userId": 1,
       "id": 7,
       "title": "illo expedita consequatur quia in",
-      "completed": false
+      "completed": true
     },
     {
       "userId": 1,
@@ -56,14 +56,8 @@
     },
     {
       "userId": 1,
-      "id": 1648560920438,
-      "title": "nou",
-      "completed": false
-    },
-    {
-      "userId": 1,
       "id": 1648643082366,
-      "title": "foarte nou ",
+      "title": "foarte nou 2",
       "completed": true
     },
     {
@@ -238,7 +232,7 @@
       "userId": 2,
       "id": 38,
       "title": "totam quia non",
-      "completed": false
+      "completed": true
     },
     {
       "userId": 2,

@@ -23,6 +23,7 @@ let selectItemsPerPage = document.querySelector(
   ".options__items-per-page select"
 );
 
+// Helpers
 const resetForm = () => {
   btnForm.innerHTML = "Add TO DO";
   btnForm.setAttribute("dataid", "");
@@ -46,6 +47,19 @@ const getImageByStatusTodo = (item) => {
   }
 };
 
+const filterAndSearchLink = () => {
+  if (inputSearch.value.trim() === "" && selectFilter.value === "") {
+    return "";
+  } else if (inputSearch.value.trim() === "") {
+    return `&completed=${selectFilter.value}`;
+  } else if (selectFilter.value === "") {
+    return `&title_like=${inputSearch.value}`;
+  } else {
+    return `&completed=${selectFilter.value}&q=${inputSearch.value}`;
+  }
+};
+
+// Templates
 const createItemTodoTemplate = (item) => {
   let image = getImageByStatusTodo(item);
   return `
@@ -95,20 +109,30 @@ const createPaginationTemplate = (totalItems) => {
   return template;
 };
 
-const filterAndSearchLink = () => {
-  if (inputSearch.value.trim() === "" && selectFilter.value === "") {
-    return "";
-  } else if (inputSearch.value.trim() === "") {
-    return `&completed=${selectFilter.value}`;
-  } else if (selectFilter.value === "") {
-    return `&title_like=${inputSearch.value}`;
-  } else {
-    return `&completed=${selectFilter.value}&q=${inputSearch.value}`;
-  }
+// Events creators
+const createPaginationEvents = () => {
+  let pages = document.querySelectorAll(".pagination a");
+  pages.forEach((item) => item.addEventListener("click", pageHandler));
 };
 
+const createToDosEvents = () => {
+  let statusBtn = document.querySelectorAll(".status");
+  let editBtn = document.querySelectorAll(".edit");
+  let deleteBtn = document.querySelectorAll(".delete");
+
+  statusBtn.forEach((item) =>
+    item.addEventListener("click", clickStatusHandler)
+  );
+
+  editBtn.forEach((item) => item.addEventListener("click", clickEditHandler));
+
+  deleteBtn.forEach((item) =>
+    item.addEventListener("click", clickDeleteHandler)
+  );
+};
+
+// Handlers
 const pageHandler = (event) => {
-  console.log(Number(event.currentTarget.getAttribute("page")));
   if (
     pageState.currentPage === Number(event.currentTarget.getAttribute("page"))
   ) {
@@ -187,27 +211,6 @@ const clickDeleteHandler = (event) => {
   });
 };
 
-const createPaginationEvents = () => {
-  let pages = document.querySelectorAll(".pagination a");
-  pages.forEach((item) => item.addEventListener("click", pageHandler));
-};
-
-const createToDosEvents = () => {
-  let statusBtn = document.querySelectorAll(".status");
-  let editBtn = document.querySelectorAll(".edit");
-  let deleteBtn = document.querySelectorAll(".delete");
-
-  statusBtn.forEach((item) =>
-    item.addEventListener("click", clickStatusHandler)
-  );
-
-  editBtn.forEach((item) => item.addEventListener("click", clickEditHandler));
-
-  deleteBtn.forEach((item) =>
-    item.addEventListener("click", clickDeleteHandler)
-  );
-};
-
 const displayToDos = () => {
   let specialLink = filterAndSearchLink();
 
@@ -227,6 +230,7 @@ const displayToDos = () => {
   );
 };
 
+//Events
 btnForm.addEventListener("click", submitHandler);
 
 selectFilter.addEventListener("change", () => {
@@ -251,4 +255,4 @@ selectItemsPerPage.addEventListener("click", (event) => {
   displayToDos();
 });
 
-window.onload = () => displayToDos();
+window.addEventListener("load", displayToDos);
