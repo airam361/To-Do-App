@@ -3,9 +3,15 @@ const link = "https://to-do-app-bk.herokuapp.com/todos";
 
 export const getToDos = (specialLink, noPage = 1, limit = 10) => {
   let totalItems = 0;
-  return fetch(link + `?_page=${noPage}&_limit=${limit}` + specialLink, {
-    method: "GET",
-  })
+  return fetch(
+    link +
+      `?_page=${noPage}&_limit=${limit}` +
+      specialLink +
+      "&_sort=id&_order=desc",
+    {
+      method: "GET",
+    }
+  )
     .then((response) => {
       totalItems = response.headers.get("X-Total-Count");
       return response.json();
